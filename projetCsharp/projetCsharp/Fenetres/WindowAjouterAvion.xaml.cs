@@ -23,5 +23,10 @@ namespace projetCsharp.Fenetres
         {
             InitializeComponent();
         }
+
+        private void Button_Click_Annuler(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

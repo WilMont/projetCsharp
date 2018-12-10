@@ -18,7 +18,7 @@ namespace projetCsharp.Classes.BDD
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
-            MySqlCommand cmd = new SqlCommand("Select * from aeroport", connection);
+            MySqlCommand cmd = new MySqlCommand("Select nom from aeroport", connection);
             connection.Open();
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
