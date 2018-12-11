@@ -12,13 +12,13 @@ namespace projetCsharp.Classes.BDD
 {
     public class AvionBDD
     {
-        public static void AfficherTout(DataGrid grille)
+        public static void AfficherAeroports(DataGrid grille)
         {
-            String connectionString = "SERVER=localhost;DATABASE=bddairatlantique;UID=root;PASSWORD=Epsi2018!";
+            String connectionString = "SERVER=localhost;DATABASE=airatlantique;UID=root;PASSWORD=Epsi2018!";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
-            MySqlCommand cmd = new MySqlCommand("Select nom from aeroport", connection);
+            MySqlCommand cmd = new MySqlCommand("Select * from aeroport", connection);
             connection.Open();
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
@@ -27,37 +27,53 @@ namespace projetCsharp.Classes.BDD
             grille.DataContext = dt;
         }
 
-        public static void AfficherNom(DataGrid grille)
+        public static void AfficherAvions(DataGrid grille)
         {
-            String connectionString = "SERVER=localhost;DATABASE=bddairatlantique;UID=root;PASSWORD=Epsi2018!";
+            String connectionString = "SERVER=localhost;DATABASE=airatlantique;UID=root;PASSWORD=Epsi2018!";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
-            MySqlCommand cmd = new MySqlCommand("Select nom from aeroport", connection);
+            MySqlCommand cmd = new MySqlCommand("Select * from avion", connection);
             connection.Open();
-            DataTable dt = new DataTable();
-            dt.Load(cmd.ExecuteReader());
+            DataTable dataTable = new DataTable();
+            dataTable.Load(cmd.ExecuteReader());
             connection.Close();
 
-            grille.DataContext = dt;
+            grille.DataContext = dataTable;
         }
 
-        public static void RajouterAvion(TextBox avion)
+        public static void AfficherClients(DataGrid grille)
         {
-            //using (var connexion=new SqlConnection(ConfigurationManager.ConnectionStrings"bddairatlantique"
-            //{
-            //var mail = ConfigurationManager.AppSettings["mailAdmin"];
-            //}
-            String connectionString = "SERVER=localhost;DATABASE=bddairatlantique;UID=root;PASSWORD=Epsi2018!";
+            String connectionString = "SERVER=localhost;DATABASE=airatlantique;UID=root;PASSWORD=Epsi2018!";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO utilisateur (Modèle) VALUES(@modele)", connection);
+            MySqlCommand cmd = new MySqlCommand("Select * from client", connection);
             connection.Open();
-            TextBox tb = new TextBox();
-            MySqlParameter pmodele = cmd.Parameters.Add("@modele", MySqlDbType.VarChar);
-            //pmodele.Value = textmodele.Text;
+            DataTable dataTable = new DataTable();
+            dataTable.Load(cmd.ExecuteReader());
             connection.Close();
+
+            grille.DataContext = dataTable;
+        }
+
+        public static int AjouterClient(TextBox nom_client, TextBox prenom_client, TextBox mail_client, TextBox adresse_client, TextBox sexe_client, TextBox date_naissance_client, TextBox pfidelite_client)
+        {
+            String connectionString = "SERVER=localhost;DATABASE=airatlantique;UID=root;PASSWORD=Epsi2018!";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            MySqlCommand MyCommand = new MySqlCommand("INSERT INTO client (nom, prenom, mail, adresse, sexe, date_naissance, pfidelite, pointsf) " +
+                "Values (@nom_client, @prenom_client, @mail_client, @adresse_client, @sexe_client, @date_naissance_client, @pointsf_client)", connection);
+            MyCommand.Parameters.AddWithValue("@nom_client", nom_client.Text);
+            MyCommand.Parameters.AddWithValue("@prenom_client", prenom_client.Text);
+            MyCommand.Parameters.AddWithValue("@mail_client", mail_client.Text);
+            MyCommand.Parameters.AddWithValue("@adresse_client", adresse_client.Text);
+            MyCommand.Parameters.AddWithValue("@sexe_client", sexe_client.Text);
+            MyCommand.Parameters.AddWithValue("@date_naissance_client", date_naissance_client.Text);
+            MyCommand.Parameters.AddWithValue("@pointsf_client", pfidelite_client.Text);
+            connection.Open();
+            return MyCommand.ExecuteNonQuery();
 
         }
     }

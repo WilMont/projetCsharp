@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid Margin="0,24,549.6,202" Name="dtGrid" ItemsSource="{Binding}"/>
-        <DataGrid Margin="540,24,9.6,202" Name="dtGridNom" ItemsSource="{Binding}"/>
-        <Button Content="Ajouter un avion" HorizontalAlignment="Left" Margin="357,298,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click_AjouterAvion"/>
+        <DataGrid Margin="0,24,549.6,202" Name="dataGrid_aeroport" ItemsSource="{Binding}"/>
+        <DataGrid Margin="540,24,9.6,202" Name="dataGrid_avion" ItemsSource="{Binding}"/>
+        <DataGrid Margin="268,99,281.6,127" Name="dataGrid_client" ItemsSource="{Binding}"/>
+        
+        <Button Content="Ajouter un client" HorizontalAlignment="Left" Margin="407,298,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click_AjouterAvion"/>
 
 
     </Grid>

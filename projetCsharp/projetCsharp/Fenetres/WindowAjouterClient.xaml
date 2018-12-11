@@ -1,0 +1,27 @@
+﻿<Window x:Class="projetCsharp.Fenetres.WindowAjouterAvion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetCsharp.Fenetres"
+        mc:Ignorable="d"
+        Title="WindowAjouterAvion" Height="450" Width="800">
+    <Grid>
+        <TextBox Name="txtbx_nomClient" HorizontalAlignment="Left" Height="23" Margin="89,61,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtbx_prenomClient" HorizontalAlignment="Left" Height="23" Margin="89,97,0,0" TextWrapping="Wrap" Text="Prénom" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtbx_mailClient" HorizontalAlignment="Left" Height="23" Margin="89,246,0,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtbx_adresseClient" HorizontalAlignment="Left" Height="23" Margin="89,210,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtbx_sexeClient" HorizontalAlignment="Left" Height="23" Margin="89,134,0,0" TextWrapping="Wrap" Text="Sexe" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtbx_dateNaissanceClient" HorizontalAlignment="Left" Height="23" Margin="89,172,0,0" TextWrapping="Wrap" Text="Date de naissance" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtbx_pointsfClient" HorizontalAlignment="Left" Height="23" Margin="278,246,0,0" TextWrapping="Wrap" Text="Points de fidélité" VerticalAlignment="Top" Width="120" />
+
+
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="538,338,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Annuler"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="89,343,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Ajouter"/>
+
+        <RadioButton Content="Oui" HorizontalAlignment="Left" Margin="278,221,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Oui_pointsfidelite"/>
+        <RadioButton Content="Non" HorizontalAlignment="Left" Margin="356,221,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Non_pointsfidelite"/>
+
+
+    </Grid>
+</Window>

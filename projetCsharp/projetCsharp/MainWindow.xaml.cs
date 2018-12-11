@@ -29,8 +29,9 @@ namespace projetCsharp
         {
             InitializeComponent();
 
-            AvionBDD.AfficherTout(dtGrid);
-            AvionBDD.AfficherNom(dtGridNom);
+            AvionBDD.AfficherAeroports(dataGrid_aeroport);
+            AvionBDD.AfficherAvions(dataGrid_avion);
+            AvionBDD.AfficherClients(dataGrid_client);
 
         }
 

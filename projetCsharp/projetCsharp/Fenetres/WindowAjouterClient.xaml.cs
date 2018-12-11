@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projetCsharp.Classes.BDD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,21 @@ namespace projetCsharp.Fenetres
         private void Button_Click_Annuler(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click_Ajouter(object sender, RoutedEventArgs e)
+        {
+            AvionBDD.AjouterClient(txtbx_nomClient, txtbx_prenomClient, txtbx_mailClient, txtbx_adresseClient, txtbx_sexeClient, txtbx_dateNaissanceClient, txtbx_pointsfClient);
+        }
+
+        private void RadioButton_Checked_Oui_pointsfidelite(object sender, RoutedEventArgs e)
+        {
+            int accesPFidelite = 1;
+        }
+
+        private void RadioButton_Checked_Non_pointsfidelite(object sender, RoutedEventArgs e)
+        {
+            int accesPFidelite = 0;
         }
     }
 }
