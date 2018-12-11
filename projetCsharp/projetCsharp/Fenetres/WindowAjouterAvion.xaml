@@ -7,21 +7,39 @@
         mc:Ignorable="d"
         Title="WindowAjouterAvion" Height="450" Width="800">
     <Grid>
-        <TextBox Name="txtbx_nomClient" HorizontalAlignment="Left" Height="23" Margin="89,61,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="txtbx_prenomClient" HorizontalAlignment="Left" Height="23" Margin="89,97,0,0" TextWrapping="Wrap" Text="Prénom" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="txtbx_mailClient" HorizontalAlignment="Left" Height="23" Margin="89,246,0,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="txtbx_adresseClient" HorizontalAlignment="Left" Height="23" Margin="89,210,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="txtbx_sexeClient" HorizontalAlignment="Left" Height="23" Margin="89,134,0,0" TextWrapping="Wrap" Text="Sexe" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="txtbx_dateNaissanceClient" HorizontalAlignment="Left" Height="23" Margin="89,172,0,0" TextWrapping="Wrap" Text="Date de naissance" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="txtbx_pointsfClient" HorizontalAlignment="Left" Height="23" Margin="278,246,0,0" TextWrapping="Wrap" Text="Points de fidélité" VerticalAlignment="Top" Width="120" />
+        <!-- Menu de gauche -->
+        <!-- Nom du client -->
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="96,57,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_nomClient" HorizontalAlignment="Left" Height="23" Margin="138,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <!-- Prénom du client -->
+        <Label Content="Prénom" HorizontalAlignment="Left" Margin="82,96,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_prenomClient" HorizontalAlignment="Left" Height="23" Margin="138,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <!-- Genre du client -->
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="89,134,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_sexeClient" HorizontalAlignment="Left" Height="23" Margin="138,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <!-- Date de naissance du client -->
+        <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="27,169,0,0" VerticalAlignment="Top"/>
+        <Label Content="(aaaa-mm-jj)" HorizontalAlignment="Left" Margin="27,180,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_dateNaissanceClient" HorizontalAlignment="Left" Height="23" Margin="139,172,0,0" TextWrapping="Wrap" Text="{Binding Date, StringFormat='{}{0:yyyy/MM/dd}'}" VerticalAlignment="Top" Width="120" />
+        <!-- Adresse du client -->
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="81,206,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_adresseClient" HorizontalAlignment="Left" Height="23" Margin="138,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <!-- Mail du client -->
+        <Label Content="Mail" HorizontalAlignment="Left" Margin="101,242,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_mailClient" HorizontalAlignment="Left" Height="23" Margin="138,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
 
-
+        <!-- Menu de droite (Points de fidélité). -->
+        <Label Content="Points de fidélité" HorizontalAlignment="Left" Margin="494,194,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtbx_pointsfClient" HorizontalAlignment="Left" Height="23" Margin="494,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        
+        <RadioButton Content="Oui" HorizontalAlignment="Left" Margin="493,220,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Oui_pointsfidelite"/>
+        <RadioButton Content="Non" HorizontalAlignment="Left" Margin="571,220,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Non_pointsfidelite"/>
+        
+        <!-- Boutons -->
         <Button Content="Annuler" HorizontalAlignment="Left" Margin="538,338,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Annuler"/>
         <Button Content="Ajouter" HorizontalAlignment="Left" Margin="89,343,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Ajouter"/>
-
-        <RadioButton Content="Oui" HorizontalAlignment="Left" Margin="278,221,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Oui_pointsfidelite"/>
-        <RadioButton Content="Non" HorizontalAlignment="Left" Margin="356,221,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Non_pointsfidelite"/>
-
+        
+        
 
     </Grid>
 </Window>

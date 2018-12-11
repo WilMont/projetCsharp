@@ -63,7 +63,7 @@ namespace projetCsharp.Classes.BDD
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
-            MySqlCommand MyCommand = new MySqlCommand("INSERT INTO client (nom, prenom, mail, adresse, sexe, date_naissance, pfidelite, pointsf) " +
+            MySqlCommand MyCommand = new MySqlCommand("INSERT INTO client (nom, prenom, mail, adresse, sexe, date_naissance, pointsf) " +
                 "Values (@nom_client, @prenom_client, @mail_client, @adresse_client, @sexe_client, @date_naissance_client, @pointsf_client)", connection);
             MyCommand.Parameters.AddWithValue("@nom_client", nom_client.Text);
             MyCommand.Parameters.AddWithValue("@prenom_client", prenom_client.Text);
