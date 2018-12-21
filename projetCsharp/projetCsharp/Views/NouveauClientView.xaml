@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="projetCsharp.Views.NouveauClientView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projetCsharp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="white">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Column="2" Grid.ColumnSpan="3">
+            <TextBlock Background="white" Foreground="Red" FontFamily="Verdana" FontSize="25" TextAlignment="Center">Nouveau Client</TextBlock>
+
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="5">
+            <StackPanel Margin="0,0,0,-0.2">
+                <Label Content="Nom"></Label>
+                <!--            <TextBox Name="nomTextBox" TextChanged="nomChanged"/> -->
+                <TextBox Name="nomTextBox" Height="20"/>
+                <Label Content="Prenom"></Label>
+                <!-- <TextBox Name="prenomTextBox" TextChanged="prenomChanged"/> -->
+                <TextBox Name="prenomTextBox" Height="20" Margin="0,0,0.300,0" />
+                <Label Content="Mail"></Label>
+                <TextBox Name="mailTextBox" Height="20" Margin="0,0,0.300,0" />
+                <Label Content="Adresse"></Label>
+                <TextBox Name="adresseTextBox" Height="20" Margin="0,0,0.300,0" />
+                <Label Content="Points de fidélité"></Label>
+                <TextBox Name="pointsfTextBox" Height="20" Margin="0,0,0.300,0" />
+                <Button x:Name="enregistrerClientButton" MouseDoubleClick="enregistrerClientButton_MouseDoubleClick" Background="red" Foreground="White" FontSize="10" FontFamily="Verdana" MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over" Height="35" Width="200" Margin="10">Enregistrer</Button>
+            </StackPanel>
+        </DockPanel>
+
+    </Grid>
+</UserControl>

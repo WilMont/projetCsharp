@@ -4,14 +4,64 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetCsharp"
+        xmlns:viewmodels="clr-namespace:projetCsharp.ViewModels"
+        xmlns:views="clr-namespace:projetCsharp.Views"
+        xmlns:wpf="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Name="GestionVolsViewTemplate" DataType="{x:Type viewmodels:GestionVolsViewModel}">
+            <views:GestionVolsView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="NouveauVolTemplate" DataType="{x:Type viewmodels:NouveauVolViewModel}">
+            <views:NouveauVolView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="ModifierVolTemplate" DataType="{x:Type viewmodels:ModifierVolViewModel}">
+            <views:ModifierVolView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="GestionClientsTemplate" DataType="{x:Type viewmodels:ClientViewModel}">
+            <views:GestionClientsView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="NouveauClientTemplate" DataType="{x:Type viewmodels:NouveauClientViewModel}">
+            <views:NouveauClientView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="ModifierClientTemplate" DataType="{x:Type viewmodels:ModifierClientViewModel}">
+            <views:ModifierClientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+
+
+    </Window.Resources>
+
     <Grid>
-        <DataGrid Margin="0,24,549.6,202" Name="dataGrid_aeroport" ItemsSource="{Binding}"/>
-        <DataGrid Margin="540,24,9.6,202" Name="dataGrid_avion" ItemsSource="{Binding}"/>
-        <DataGrid Margin="268,99,281.6,127" Name="dataGrid_client" ItemsSource="{Binding}"/>
-        
-        <Button Content="Ajouter un client" HorizontalAlignment="Left" Margin="407,298,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click_AjouterAvion"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Background="Red" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
+            <StackPanel>
+                <Button Background="Red" Foreground="White" Content="Gestion des vols" Click="Gestiondesvols_click"  MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over"/>
+                <Button Background="Red" Foreground="White"  Content="Nouveau vol" Click="AjoutVol_click"  MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over"/>
+                <Button Background="Red" Foreground="White"  Content="Modification d'un vol" Click="ModifierVol_click"  MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over"/>
+                <Button Background="Red" Foreground="White"  Content="Gestion de la clientèle" Click="Gestiondesclients_click"  MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over"/>
+                <Button Background="Red" Foreground="White"  Content="Nouveau client" Click="NouveauClient_click"  MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over"/>
+                <Button Background="Red" Foreground="White"  Content="Modifier un client" Click="ModifierClient_click"  MouseEnter="BoutonCouleur_over" MouseLeave="BoutonCouleurBack_over"/>
+            </StackPanel>
+
+        </DockPanel>
+
+        <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5"  Content="{Binding}"/>
 
 
     </Grid>

@@ -63,10 +63,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Fenetres\WindowAjouterAvion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="DALConnexion.cs" />
+    <Compile Include="Models\DAL\ClientDAL.cs" />
+    <Compile Include="Models\DAO\ClientDAO.cs" />
+    <Compile Include="Models\ORM\ClientORM.cs" />
+    <Compile Include="ViewModels\ClientViewModel.cs" />
+    <Compile Include="ViewModels\GestionClientsViewModel.cs" />
+    <Compile Include="ViewModels\GestionVolsViewModel.cs" />
+    <Compile Include="ViewModels\ModifierClientViewModel.cs" />
+    <Compile Include="ViewModels\ModifierVolViewModel.cs" />
+    <Compile Include="ViewModels\NouveauClientViewModel.cs" />
+    <Compile Include="ViewModels\NouveauVolViewModel.cs" />
+    <Compile Include="Views\GestionClientsView.xaml.cs">
+      <DependentUpon>GestionClientsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GestionVolsView.xaml.cs">
+      <DependentUpon>GestionVolsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifierClientView.xaml.cs">
+      <DependentUpon>ModifierClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifierVolView.xaml.cs">
+      <DependentUpon>ModifierVolView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NouveauClientView.xaml.cs">
+      <DependentUpon>NouveauClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NouveauVolView.xaml.cs">
+      <DependentUpon>NouveauVolView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,14 +100,34 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\BDD\AvionBDD.cs" />
-    <Compile Include="Fenetres\WindowAjouterAvion.xaml.cs">
-      <DependentUpon>WindowAjouterAvion.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\GestionClientsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GestionVolsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModifierClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModifierVolView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NouveauClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NouveauVolView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

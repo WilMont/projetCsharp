@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,56 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-using projetCsharp.ViewModels;
 
-namespace projetCsharp
+namespace projetCsharp.Views
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour ModifierClientView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ModifierClientView : UserControl
     {
-        public MainWindow()
+        public ModifierClientView()
         {
             InitializeComponent();
         }
-
-        private void Gestiondesvols_click(object sender, RoutedEventArgs e)
-        {
-
-
-            DataContext = new GestionVolsViewModel();
-
-
-        }
-
-        private void Gestiondesclients_click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new ClientViewModel();
-
-        }
-
-        private void AjoutVol_click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new NouveauVolViewModel();
-        }
-
-        private void ModifierVol_click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new ModifierVolViewModel();
-        }
-
-        private void NouveauClient_click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new NouveauClientViewModel();
-        }
-
-        private void ModifierClient_click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new ModifierClientViewModel();
-        }
-
 
         private void BoutonCouleur_over(object sender, MouseEventArgs e)
         {
@@ -98,6 +59,5 @@ namespace projetCsharp
 
 
         }
-
     }
 }
